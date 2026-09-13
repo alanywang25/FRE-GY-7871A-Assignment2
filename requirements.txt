@@ -1,0 +1,14 @@
+numpy>=1.26,<2.0
+pandas>=2.1,<2.3
+requests
+beautifulsoup4
+lxml  # Optional: the notebook uses Python's built-in HTML parser by default.
+yfinance
+pandas-datareader
+scikit-learn
+scipy>=1.11,<1.15
+statsmodels>=0.14,<0.15
+matplotlib
+seaborn
+transformers
+torch
