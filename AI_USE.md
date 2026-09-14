@@ -1,13 +1,14 @@
-# AI Use Disclosure
+# AI use disclosure
 
-## Tool used
+**Tools used:** 
+Codex
 
-OpenAI Codex was used to help scaffold the repository, write and document the analysis notebook, and suggest reproducible data-collection and validation steps.
+**What I used them for:**
+I used Codex to get started with an initial implentation of web collection, text preprocessing, FinBERT scoring, event-time market alignment, and regression presentation. I also used it to debug any errors that I encountered when running/testing the code cells in the notebook.
 
-## How it was used
+**What I wrote myself:**
+I implemented and set up the Python code in the notebook for outputting the required tables and figures. I also reviewed the other code that Codex wrote in the notebook to ensure that assignment requirements were met, and I wrote out the interpretations of the tables and figures in the report. 
 
-The tool assisted with Python structure for web collection, text preprocessing, FinBERT scoring, event-time market alignment, and regression presentation. It did not supply an empirical result, a forecast, market data, or a conclusion.
+**Anything the model got wrong that I had to correct:**
+The initial web collection implementation that Codex proposed identified links by their visible label so the code ended up missing a lot of statement/minutes pages. This initial implementation also didn't process the Federal Reserve's archives correctly as it was using an incorrect archive path.
 
-## Student responsibility
-
-Before submission, the student will run the notebook, inspect every collected document and timestamp, verify all figures/tables and statistical results, compare findings with the assigned readings, and write the final report and investment recommendation in their own words. Manual corrections to the document manifest will be documented in the notebook's override cell.

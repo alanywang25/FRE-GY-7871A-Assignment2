@@ -12,7 +12,7 @@ No source data are stored here. The notebook obtains public documents from Feder
 ## Reproduce
 
 For the supplied Anaconda environment, prefer a conda solve so NumPy, SciPy,
-and Statsmodels binary extensions are built for one another:
+and Statsmodels binary extensions are built for one another (fe-course is the name of the Python kernel used for this project):
 
 ```bash
 conda activate fe-course
@@ -31,6 +31,28 @@ python -m pip install -r requirements.txt
 Open the notebook and run all cells. The first execution may download the FinBERT model. Review the `DOCUMENT_OVERRIDES` cell before collection: it is the auditable place to add any missed Chair speeches, testimony, or press-conference transcripts and to correct release timestamps. Keep notebook output saved before publishing.
 
 The collection code uses Python's built-in HTML parser, so `lxml` is optional. To install the faster parser in the environment selected by the notebook kernel, run `python -m pip install lxml`.
+
+The live collector now includes post-meeting statements, minutes, FOMC
+press-conference transcripts, and Chair speeches/testimony. It labels timestamps
+whose exact release time could not be verified; review those records and correct
+them in `DOCUMENT_OVERRIDES` before running the event-study regressions.
+
+## FinBERT troubleshooting
+
+FinBERT requires compatible PyTorch and Transformers versions. If loading
+`BertForSequenceClassification` fails, run the following in a notebook cell,
+restart the kernel, and rerun the notebook:
+
+```python
+%pip uninstall -y torchvision torchaudio
+%pip install --upgrade --force-reinstall --no-cache-dir "torch>=2.5,<2.7" "transformers>=4.41,<4.49"
+%pip install ipywidgets jupyterlab_widgets
+```
+
+`torchvision` and `torchaudio` are not needed for this text-only task and are
+removed because incompatible versions can prevent Transformers from importing
+the BERT model class. Hugging Face authentication is optional for the public
+`ProsusAI/finbert` model; it only raises download-rate limits.
 
 ## Method summary
 
