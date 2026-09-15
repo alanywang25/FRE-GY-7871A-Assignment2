@@ -20,7 +20,7 @@ conda install -c conda-forge --force-reinstall "numpy>=1.26,<2.0" "scipy>=1.11,<
 python -m pip install -r requirements.txt
 ```
 
-If `fe-course` has other conflicting packages, create a clean environment:
+If the Python kernel has other conflicting packages, create a clean environment:
 
 ```bash
 conda create -n fre-assignment python=3.11 "numpy>=1.26,<2.0" "scipy>=1.11,<1.15" "statsmodels>=0.14,<0.15" -c conda-forge
