@@ -5,34 +5,16 @@
 
 ## Executive summary
 
-The expanded sample contains 297 documents: FOMC statements and minutes,
-press-conference transcripts, and Chair speeches. Warsh-era communication is
-mostly positive on both tone measures, but the current Warsh sample remains
-small (nine documents). In the full sample, the word-list score predicts a
-positive growth-minus-value move (+0.083 percentage points, p = 0.047), while
-FinBERT predicts the opposite (-1.355 percentage points, p = 0.058). Neither
-method explains DXY, 10s2s, or the 1-year yield at conventional significance
-levels. The key result is therefore disagreement, not a robust directional
+The sample contains 297 documents: FOMC statements and minutes, press-conference transcripts, and Chair speeches. Warsh-era communication is mostly positive on both tone measures, but the current Warsh sample remains small (nine documents). In the full sample, the word-list score predicts a positive growth-minus-value move (+0.083 percentage points, p = 0.047), while FinBERT predicts the opposite (-1.355 percentage points, p = 0.058). Neither method explains DXY, 10s2s, or the 1-year yield at conventional significance levels. The key result is therefore disagreement, not a robust directional
 signal.
 
-My base case is a September **hold** and a 65% chance of a more hawkish
-statement. I retain a small long-IWF/short-IWN position because the lexicon
-result is statistically significant, but the trade is low conviction because
-FinBERT disagrees and 154 document timestamps need verification.
+My base case is a September **hold** and a 65% chance of a more hawkish statement. I retain a small long-IWF/short-IWN position because the lexicon result is statistically significant, but the trade is low conviction because FinBERT disagrees and 154 document timestamps need verification.
 
 ## Data and methods
 
-The sample begins in February 2018. Powell is the baseline Chair through May
-21, 2026; the Warsh period begins May 22, 2026. Documents come from Federal
-Reserve calendars, historical materials, press-conference transcripts, and
-speech archives. The one-day outcomes are DXY, 10s2s, the 1-year Treasury yield,
-and IWF-minus-IWN. Regressions include the DGS3MO change, separating text-tone
-associations from contemporaneous short-rate news.
+The sample begins in February 2018. Powell is the baseline Chair through May 21, 2026; the Warsh period begins May 22, 2026. Documents come from Federal Reserve calendars, historical materials, press-conference transcripts, and speech archives. The one-day outcomes are DXY, 10s2s, the 1-year Treasury yield, and IWF-minus-IWN. Regressions include the DGS3MO change, separating text-tone associations from contemporaneous short-rate news.
 
-Tone is measured two ways: a monetary-policy hawkish/dovish word list normalized
-by document length, and sentence-level FinBERT sentiment (positive minus
-negative probability). The sample is expanded, but records with date-only or
-assumed timestamps must be manually checked before a final event study.
+Tone is measured two ways: a monetary-policy hawkish/dovish word list normalized by document length, and sentence-level FinBERT sentiment (positive minus negative probability). The sample is expanded, but records with date-only or assumed timestamps must be manually checked before a final event study.
 
 ## Table 1. Documents collected, by type and Chair
 
@@ -43,24 +25,18 @@ assumed timestamps must be manually checked before a final event study.
 | Chair speeches | 86 | 3 |
 | Post-meeting statements | 72 | 2 |
 
-Table 1 now covers all three required communication classes. It still requires
-a timestamp audit: 154 records do not have a directly verified release time.
+Table 1 now covers all three required communication classes. It still requires a timestamp audit: 154 records do not have a directly verified release time.
 
 ## Figure 1. Hawkish/dovish tone over time by document type
 
 ![Figure 1: Word-list and FinBERT tone, by document type, with May 22, 2026 marking the start of Warsh's term.](figure_1_tone_trends.png)
 
-The expanded figure contains both methods. The word-list series shows positive
-Warsh readings for the July statement (2.000), August minutes (1.291), and June
-press conference (1.065). FinBERT readings for the same documents are modestly
-positive (0.216, 0.104, and 0.070). The two methods broadly agree that recent
-communication is not strongly dovish, but their market-regression implications
-are not aligned.
+The expanded figure contains both methods. The word-list series shows positive Warsh readings for the July statement (2.000), August minutes (1.291), and June press conference (1.065). FinBERT readings for the same documents are modestly
+positive (0.216, 0.104, and 0.070). The two methods broadly agree that recent communication is not strongly dovish, but their market-regression implications are not aligned.
 
 ## Table 2. One-day market changes after each Warsh-era release
 
-DXY and growth-minus-value are percentage changes. Treasury values and 10s2s
-are percentage-point changes. Speech timestamps shown at noon are provisional.
+DXY and growth-minus-value are percentage changes. Treasury values and 10s2s are percentage-point changes. Speech timestamps shown at noon are provisional.
 
 | Release | Type | Lexicon | FinBERT | DXY | 10s2s | 1-year | Growth minus value |
 |---|---|---:|---:|---:|---:|---:|---:|
@@ -74,14 +50,11 @@ are percentage-point changes. Speech timestamps shown at noon are provisional.
 | 2026-08-28 12:00 | Speech | 0.208 | 0.060 | 0.545 | -0.080 | 0.110 | -0.208 |
 | 2026-09-03 12:00 | Speech | 0.000 | 0.035 | -0.562 | 0.030 | -0.050 | 1.025 |
 
-The same-day statement and press-conference rows deliberately share a market
-move: they were released on the same announcement date. They should not be
-treated as independent events in a final inference exercise.
+The same-day statement and press-conference rows deliberately share a market move: they were released on the same announcement date. They should not be treated as independent events in a final inference exercise.
 
 ## Table 3. One-day regressions with the 3-month bill control
 
-Each row regresses the one-day outcome on one tone score and DGS3MO, using HC3
-robust standard errors.
+Each row regresses the one-day outcome on one tone score and DGS3MO, using HC3 robust standard errors.
 
 | Indicator | Tone method | N | Tone beta | Tone p-value | DGS3MO beta | R-squared |
 |---|---|---:|---:|---:|---:|---:|
@@ -94,30 +67,16 @@ robust standard errors.
 | Growth minus value | Lexicon | 297 | 0.083 | 0.047 | 1.477 | 0.015 |
 | Growth minus value | FinBERT | 297 | -1.355 | 0.058 | 1.531 | 0.011 |
 
-The word-list and FinBERT estimates for growth-minus-value have opposite signs,
-with both near conventional significance cutoffs. This conflicts with a strong
-single-method trading claim. All other text coefficients are statistically weak.
+The word-list and FinBERT estimates for growth-minus-value have opposite signs, with both near conventional significance cutoffs. This conflicts with a strong single-method trading claim. All other text coefficients are statistically weak.
 
 ## Comparison with the readings
 
-Doh, Kim, and Yang (2021) argue that qualitative statement language can move
-financial conditions independently of the target-rate decision. This project
-uses DGS3MO as a control in the same spirit, but its broad daily window and
-mixed document types produce weaker yield results. The disagreement between the
-lexicon and FinBERT results also reinforces their concern that measuring policy
-language is not straightforward. [Doh, Kim, and Yang (2021)](https://www.kansascityfed.org/documents/7577/erv106n1dohkimyang.pdf)
+Doh, Kim, and Yang (2021) argue that qualitative statement language can move financial conditions independently of the target-rate decision. This project uses DGS3MO as a control in the same spirit, but its broad daily window and mixed document types produce weaker yield results. The disagreement between the lexicon and FinBERT results also reinforces their concern that measuring policy language is not straightforward. [Doh, Kim, and Yang (2021)](https://www.kansascityfed.org/documents/7577/erv106n1dohkimyang.pdf)
 
-Doh, Song, and Yang separate tone, novelty, and the surprise component using
-alternative FOMC statements and high-frequency data. This project improves on a
-single word list by adding FinBERT, but it still uses absolute tone and daily
-returns. It cannot make their counterfactual or surprise-based causal claims.
-Adding novelty, a narrow event window, and clustered treatment of same-day
-statement/press-conference pairs would improve the design. [Doh, Song, and
-Yang](https://www.kansascityfed.org/documents/5642/rwp20-14dohsongyang.pdf)
+Doh, Song, and Yang separate tone, novelty, and the surprise component using alternative FOMC statements and high-frequency data. This project improves on a single word list by adding FinBERT, but it still uses absolute tone and daily returns. It cannot make their counterfactual or surprise-based causal claims. Adding novelty, a narrow event window, and clustered treatment of same-day
+statement/press-conference pairs would improve the design. [Doh, Song, and Yang](https://www.kansascityfed.org/documents/5642/rwp20-14dohsongyang.pdf)
 
-The *Parsing the Fed* comparison is now complete for word-list and FinBERT, but
-not factor similarity. The cross-method disagreement makes factor similarity a
-useful next robustness check rather than a cosmetic addition.
+The *Parsing the Fed* comparison is now complete for word-list and FinBERT, but not factor similarity. The cross-method disagreement makes factor similarity a useful next robustness check rather than a cosmetic addition.
 
 ## September FOMC forecast
 
@@ -127,16 +86,11 @@ useful next robustness check rather than a cosmetic addition.
 |---:|---:|---:|
 | 20% | 75% | 5% |
 
-The hold remains the modal outcome. Communication-tone evidence does not itself
-identify a policy-rule change, and the small Warsh sample argues against a more
-aggressive rate call.
+The hold remains the modal outcome. Communication-tone evidence does not itself identify a policy-rule change, and the small Warsh sample argues against a more aggressive rate call.
 
 ### Statement tone
 
-There is a **65% probability** that the September statement is more hawkish
-than the prior statement. Recent Warsh communications are generally positive on
-both scores, though the modest FinBERT magnitudes argue against a high-confidence
-hawkish surprise.
+There is a **65% probability** that the September statement is more hawkish than the prior statement. Recent Warsh communications are generally positive on both scores, though the modest FinBERT magnitudes argue against a high-confidence hawkish surprise.
 
 ### Market reaction
 
@@ -149,9 +103,7 @@ The current lexicon-based forecast uses the latest statement tone scenario.
 | 1-year Treasury yield | 48.2% | -0.002 percentage points |
 | Growth minus value | 54.0% | +0.126% |
 
-Because FinBERT disagrees on growth-minus-value, these are scenario estimates,
-not a consensus forecast. A final report should show an explicit FinBERT-based
-forecast beside this table.
+Because FinBERT disagrees on growth-minus-value, these are scenario estimates, not a consensus forecast. A final report should show an explicit FinBERT-based forecast beside this table.
 
 ## Recommendation and falsification
 
@@ -171,9 +123,9 @@ restrictive market interpretation.
 
 ## Submission checklist
 
-- [ ] Verify the exact release time for the 154 flagged records and correct them in `DOCUMENT_OVERRIDES`.
-- [ ] Treat same-day statement/press-conference releases as one event, or use a narrower intraday window.
-- [ ] Add factor similarity before making a three-method *Parsing the Fed* claim.
-- [ ] Confirm `figure_1_tone_trends.png` renders in this report.
-- [ ] Rerun all tables and this report's figures after timestamp corrections.
-- [ ] Export the completed report to PDF for Brightspace.
+- [x] Add factor-similarity tone scoring and report it alongside the word-list and FinBERT methods.
+- [x] Aggregate same-day communications into a single event for Table 3 regressions and the market forecast.
+- [x] Generate and embed Figure 1.
+- [x] Export the current report to PDF.
+- [ ] Rerun Cells 1-14 after the code changes so Tables 1-3, Figure 1, and the PDF use the factor-similarity and event-level results.
+- [ ] Review each remaining `date_only_manual_time_check` record and add a verified release time in `DOCUMENT_OVERRIDES`; the code now uses official page metadata when it provides a timestamp.

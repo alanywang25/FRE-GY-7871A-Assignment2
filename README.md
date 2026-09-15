@@ -54,6 +54,11 @@ removed because incompatible versions can prevent Transformers from importing
 the BERT model class. Hugging Face authentication is optional for the public
 `ProsusAI/finbert` model; it only raises download-rate limits.
 
+The FinBERT cell batches sentences across the full corpus and uses Apple Metal
+(`mps`) automatically when it is available. Its default batch size is 32; raise
+`FINBERT_BATCH_SIZE` to 64 if your machine has sufficient memory. It also
+reuses completed in-memory scores unless `FINBERT_FORCE_RESCORE = True`.
+
 ## Method summary
 
 The notebook treats Powell (from February 2018) as the baseline and classifies documents released on or after Kevin Warsh's May 22, 2026 start date as Warsh-era. It scores every document using a monetary-policy phrase list and FinBERT sentence sentiment, computes release-day changes in DXY, 10s2s, 1-year Treasury yield, and growth-minus-value, and regresses each outcome on each score with the DGS3MO change as a control. It prints Tables 1-3, plots Figure 1, and creates a data-driven forecast and falsifiable trade recommendation.
