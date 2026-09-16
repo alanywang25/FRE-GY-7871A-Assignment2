@@ -7,7 +7,7 @@
 
 The sample contains 297 documents: FOMC statements and minutes, press-conference transcripts, and Chair speeches. Warsh-era communication is generally non-dovish under the word-list and FinBERT measures, but the current Warsh sample remains only nine documents. For inference, same-day releases are combined, yielding 228 event days. Across the word-list, FinBERT, and factor-similarity measures, no tone coefficient is statistically significant at conventional levels for DXY, 10s2s, the 1-year yield, or growth minus value. The defensible result is weak and method-sensitive evidence, not a directional trading signal.
 
-My base case is a September **hold** and a 65% chance of a more hawkish statement. The market projections below are illustrative lexicon scenarios, not investment recommendations: 154 document timestamps still need verification, the Warsh sample is short, and all three event-level tone specifications are statistically inconclusive.
+My base case is a September **hold** and a 65% chance of a more hawkish statement. The market projections below are illustrative lexicon scenarios, not a standalone investment signal: 154 document timestamps still need verification, the Warsh sample is short, and all three event-level tone specifications are statistically inconclusive.
 
 ## Data and methods
 
@@ -67,7 +67,7 @@ Each row regresses the one-day outcome on one tone score and DGS3MO, using HC3 r
 | 1-year Treasury yield | Factor similarity | 228 | -0.301 | 0.340 | 0.845 | 0.272 |
 | Growth minus value | Lexicon | 228 | 0.087 | 0.144 | 1.058 | 0.011 |
 | Growth minus value | FinBERT | 228 | -1.380 | 0.128 | 0.973 | 0.011 |
-| Growth minus value | Factor similarity | 228 | -16.335 | 0.106 | 0.666 | 0.011 |
+| Growth minus value | Factor similarity | 228 | -16.334 | 0.106 | 0.667 | 0.011 |
 
 All 12 tone coefficients have p-values above 0.10. Growth-minus-value remains the closest case—positive for the lexicon and negative for FinBERT and factor similarity—but its sign is method-dependent and its estimated relationship is not conventionally significant. The short-rate control explains more variation in the 1-year yield than text does, while every tone specification has low explanatory power. These results do not support a directional trade based on communication tone alone.
 
