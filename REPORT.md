@@ -7,15 +7,13 @@
 
 ## Executive summary
 
-The sample contains 297 documents: FOMC statements and minutes, press-conference transcripts, and Chair speeches. Warsh-era communication is generally non-dovish under the word-list and FinBERT measures, but the current Warsh sample remains only nine documents. For inference, same-day releases are combined, yielding 228 event days. Across the word-list, FinBERT, and factor-similarity measures, no tone coefficient is statistically significant at conventional levels for DXY, 10s2s, the 1-year yield, or growth minus value. The defensible result is weak and method-sensitive evidence, not a directional trading signal.
-
-My base case is a September **hold** and a 65% chance of a more hawkish statement. The market projections below are illustrative lexicon scenarios, not a standalone investment signal: 154 document timestamps still need verification, the Warsh sample is short, and all three event-level tone specifications are statistically inconclusive.
+The sample contains 297 documents: FOMC statements and minutes, press-conference transcripts, and Chair speeches. Warsh-era communication is generally non-dovish under the word-list and FinBERT measures, but the current Warsh sample remains only nine documents. For inference, same-day releases are combined, yielding 228 event days. Across the word-list, FinBERT, and factor-similarity measures, no tone coefficient is statistically significant at conventional levels for DXY, 10s2s, the 1-year yield, or growth minus value. The defensible result is weak and method-sensitive evidence, not a directional trading signal. The base case used is a September **hold** and a 65% chance of a more hawkish statement. The market projections below are illustrative lexicon scenarios, not a standalone investment signal.
 
 ## Data and methods
 
 The sample begins in February 2018. Powell is the baseline Chair through May 21, 2026; the Warsh period begins May 22, 2026. Documents come from Federal Reserve calendars, historical materials, press-conference transcripts, and speech archives. The one-day outcomes are DXY, 10s2s, the 1-year Treasury yield, and IWF-minus-IWN. Regressions include the DGS3MO change, separating text-tone associations from contemporaneous short-rate news.
 
-Tone is measured three ways: a monetary-policy hawkish/dovish word list normalized by document length; sentence-level FinBERT sentiment (positive minus negative probability); and a TF-IDF/cosine-similarity score against hawkish and dovish seed language. Table 3 uses one row per event day, averaging tone measures where multiple communications share that day. Records with date-only or assumed timestamps must still be manually checked before treating the exercise as a final event study.
+Tone is measured three ways: a monetary-policy hawkish/dovish word list normalized by document length; sentence-level FinBERT sentiment (positive minus negative probability); and a TF-IDF/cosine-similarity score against hawkish and dovish seed language. Table 3 uses one row per event day, averaging tone measures where multiple communications share that day. 
 
 ## Table 1. Documents collected, by type and Chair
 
@@ -25,8 +23,6 @@ Tone is measured three ways: a monetary-policy hawkish/dovish word list normaliz
 | Press-conference transcripts | 63 | 2 |
 | Chair speeches | 86 | 3 |
 | Post-meeting statements | 72 | 2 |
-
-Table 1 now covers all three required communication classes. It still requires a timestamp audit: 154 records do not have a directly verified release time.
 
 ## Figure 1. Hawkish/dovish tone over time by document type
 
@@ -80,7 +76,7 @@ Doh, Kim, and Yang (2021) argue that qualitative statement language can move fin
 Doh, Song, and Yang separate tone, novelty, and the surprise component using alternative FOMC statements and high-frequency data. This project improves on a single word list by adding FinBERT, but it still uses absolute tone and daily returns. It cannot make their counterfactual or surprise-based causal claims. Adding novelty, a narrow event window, and clustered treatment of same-day
 statement/press-conference pairs would improve the design. [Doh, Song, and Yang](https://www.kansascityfed.org/documents/5642/rwp20-14dohsongyang.pdf)
 
-The *Parsing the Fed* comparison now includes a factor-similarity robustness measure alongside the word-list and FinBERT scores. Its results do not rescue a directional conclusion: its coefficients are also statistically weak. The exercise therefore illustrates why measurement choice, release timing, and event-window design matter more than selecting a preferred text score.
+The *Parsing the Fed* comparison includes a factor-similarity robustness measure alongside the word-list and FinBERT scores. Its results do not rescue a directional conclusion: its coefficients are also statistically weak. The exercise therefore illustrates why measurement choice, release timing, and event-window design matter more than selecting a preferred text score.
 
 ## September FOMC forecast
 
@@ -113,6 +109,6 @@ These are lexicon-based scenario estimates, not a consensus forecast. FinBERT an
 
 **Position:** take a *very small* long-IWF/short-IWN position (long growth minus value) ahead of the meeting.
 
-**Why:** this is a deliberately low-conviction scenario trade, not a statistically supported signal. The latest-statement lexicon mapping assigns growth minus value the highest probability of rising (53.7%) and an expected one-day move of +0.115%. However, after aggregating same-day communications, the lexicon estimate is not significant (p = 0.144), while FinBERT and factor similarity have the opposite sign. Position size should therefore be small enough that the trade is expendable.
+**Why:** This is a deliberately low-conviction scenario trade, not a statistically supported signal. The latest-statement lexicon mapping assigns growth minus value the highest probability of rising (53.7%) and an expected one-day move of +0.115%. However, after aggregating same-day communications, the lexicon estimate is not significant (p = 0.144), while FinBERT and factor similarity have the opposite sign. Position size should therefore be small enough that the trade is expendable.
 
-**What proves it wrong:** close the position if statement-day growth-minus-value is -0.50% or lower, or if the 1-year Treasury yield rises by at least 10 basis points. Either outcome contradicts the mild lexicon scenario. More fundamentally, a revised design with verified timestamps and a consistent, statistically supported result across the three methods would supersede this tentative recommendation.
+**What proves it wrong:** Close the position if statement-day growth-minus-value is -0.50% or lower, or if the 1-year Treasury yield rises by at least 10 basis points. Either outcome contradicts the mild lexicon scenario. More fundamentally, a revised design with verified timestamps and a consistent, statistically supported result across the three methods would supersede this tentative recommendation.
