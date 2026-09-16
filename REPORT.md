@@ -1,10 +1,9 @@
 # Evaluating the Impact of FOMC Communications on Asset Prices
 
 **FRE-GY 7871 A - NLP and the Investment Process**  
-**Date:** September 15, 2026
 **Name:** Alan Wang
 **NetID** aw4437
-**GitHub repository:** https://github.com/alanywang25/FRE-GY-7871A-Assignment2
+**GitHub repo:** https://github.com/alanywang25/FRE-GY-7871A-Assignment2
 
 ## Executive summary
 
