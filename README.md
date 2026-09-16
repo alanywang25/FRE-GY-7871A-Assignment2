@@ -8,11 +8,11 @@ This repository contains the reproducible analysis for *Evaluating the Impact of
 - `AI_USE.md` - completed disclosure of AI assistance.
 - `REPORT.md` - Markdown version of final report
 
-No source data are stored here. The notebook obtains public documents from Federal Reserve pages and market series from FRED/Yahoo Finance when `RUN_LIVE_COLLECTION = True`. It traverses the current calendar for 2021 onward and the Federal Reserve's historical-year pages for 2018-2020.
+The notebook obtains public documents from Federal Reserve pages and market series from FRED/Yahoo Finance when `RUN_LIVE_COLLECTION = True`. It traverses the current calendar for 2021 onward and the Federal Reserve's historical-year pages for 2018-2020.
 
 ## Reproduce
 
-For the supplied Anaconda environment, prefer a conda solve so NumPy, SciPy, and Statsmodels binary extensions are built for one another:
+For the Anaconda environment, prefer a conda solve so NumPy, SciPy, and Statsmodels binary extensions are built for one another:
 
 ```bash
 conda activate <python-kernel-name>
@@ -28,12 +28,7 @@ conda activate fre-assignment
 python -m pip install -r requirements.txt
 ```
 
-Open the notebook and run all cells. The first execution may download the FinBERT model. Review the `DOCUMENT_OVERRIDES` cell before collection: it is the auditable place to add any missed Chair speeches, testimony, or press-conference transcripts and to correct release timestamps. Keep notebook output saved before publishing.
-
-The collection code uses Python's built-in HTML parser, so `lxml` is optional. To install the faster parser in the environment selected by the notebook kernel, run `python -m pip install lxml`.
-
-The live collector now includes post-meeting statements, minutes, FOMC press-conference transcripts, and Chair speeches/testimony. It labels timestamps whose exact release time could not be verified; review those records and correct
-them in `DOCUMENT_OVERRIDES` before running the event-study regressions.
+Open the notebook and run all cells. The first execution may download the FinBERT model. The collection code uses Python's built-in HTML parser, so `lxml` is optional. To install the faster parser in the environment selected by the notebook kernel, run `python -m pip install lxml`.
 
 ## FinBERT troubleshooting
 
